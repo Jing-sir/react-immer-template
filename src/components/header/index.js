@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { actionCreators  } from './store';
+import { actionCreators } from './store';
 
 function Header(props) {
     const { app, handleChangeVal } = props;
     return (
         <div>
+            {123}
             {app}
             <div onClick={() => handleChangeVal()}>chick  me</div>
         </div>
@@ -16,9 +17,9 @@ const mapStateToProps = (state) => ({
     app: state.header.app,
 });
 
-const mapDispatch = (diaptch) => ({
+const mapDispatch = (dispatch) => ({
     handleChangeVal() {
-        diaptch(actionCreators.changeVal('hello immer'));
+        dispatch(actionCreators.changeVal('hello immer'));
     }
 });
 
